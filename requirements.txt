@@ -3,7 +3,6 @@ psycopg2-binary~=2.9.6
 #psycopg2==2.3.6
 pgvector
 numpy
-plotly
 networkx
 python-dotenv
 scipy
