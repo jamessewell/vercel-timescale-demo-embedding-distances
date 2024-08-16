@@ -11,7 +11,7 @@ import json
 from dotenv import load_dotenv
 
 
-# Set up logging
+# set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Load environment variables
