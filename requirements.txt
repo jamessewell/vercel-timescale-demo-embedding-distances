@@ -5,6 +5,4 @@ pgvector
 numpy
 networkx
 python-dotenv
-#scipy
-scikit-learn
 plotly

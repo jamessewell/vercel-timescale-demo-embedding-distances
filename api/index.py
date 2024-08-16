@@ -9,8 +9,6 @@ import networkx as nx
 from plotly.utils import PlotlyJSONEncoder
 import json
 from dotenv import load_dotenv
-from scipy.spatial import distance_matrix
-from sklearn.manifold import MDS
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -87,12 +85,22 @@ def create_distance_matrix(phrases, distances):
         dist_matrix[i, j] = dist_matrix[j, i] = dist
     return dist_matrix
 
-# Use Multidimensional Scaling to position nodes based on distances
+# Simple MDS implementation
+def simple_mds(dist_matrix, dims=2):
+    n = dist_matrix.shape[0]
+    H = np.eye(n) - np.ones((n, n)) / n
+    B = -H.dot(dist_matrix**2).dot(H) / 2
+    eigvals, eigvecs = np.linalg.eigh(B)
+    idx = np.argsort(eigvals)[::-1]
+    eigvals = eigvals[idx]
+    eigvecs = eigvecs[:, idx]
+    return eigvecs[:, :dims] * np.sqrt(eigvals[:dims])
+
+# Use simple MDS to position nodes based on distances
 def mds_layout(G, distances):
     phrases = list(G.nodes())
     dist_matrix = create_distance_matrix(phrases, distances)
-    mds = MDS(n_components=2, dissimilarity="precomputed", random_state=42)
-    pos = mds.fit_transform(dist_matrix)
+    pos = simple_mds(dist_matrix)
     return {phrase: position for phrase, position in zip(phrases, pos)}
 
 # Visualize distances using Plotly (Force-directed graph with distance-based positioning)
