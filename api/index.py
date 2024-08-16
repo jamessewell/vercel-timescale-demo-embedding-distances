@@ -265,7 +265,6 @@ def index():
         logging.error(f"An error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-# Vercel requires a handler function
-def handler(request):
-    with app.request_context(request):
-        return app.full_dispatch_request()
+# Vercel serverless function handler
+def handler(event, context):
+    return app(event, context)

@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "excludeFiles": "/{.next,*.cache,node_modules,public,app}/**"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -14,5 +11,10 @@
       "src": "/(.*)",
       "dest": "api/index.py"
     }
-  ]
+  ],
+  "env": {
+    "FLASK_ENV": "production",
+    "FLASK_APP": "api/index.py"
+  }
 }
+
