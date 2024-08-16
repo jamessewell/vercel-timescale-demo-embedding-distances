@@ -10,6 +10,7 @@ from plotly.utils import PlotlyJSONEncoder
 import json
 from dotenv import load_dotenv
 
+
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
