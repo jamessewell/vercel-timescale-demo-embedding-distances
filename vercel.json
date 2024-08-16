@@ -6,10 +6,6 @@
       "use": "@vercel/python"
     }
   ],
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 200 
-  },
   "routes": [
     {
       "src": "/(.*)",
@@ -19,6 +15,10 @@
   "env": {
     "FLASK_ENV": "production",
     "FLASK_APP": "api/index.py"
+  },
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60
+    }
   }
 }
-
