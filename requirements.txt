@@ -2,9 +2,9 @@ Flask==2.0.2
 #psycopg2-binary~=2.9.6
 #psycopg2==2.9.9
 pgvector
-#numpy
-#networkx
+numpy
+networkx
 python-dotenv
-#scipy
-#scikit-learn
+scipy
+scikit-learn
 plotly
