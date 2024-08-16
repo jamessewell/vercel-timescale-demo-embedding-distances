@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "maxDuration": 200 // This function can run for a maximum of 30 seconds
+      "maxDuration": 200 
   },
   "routes": [
     {
