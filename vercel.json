@@ -13,7 +13,7 @@
   "functions": {
     "api/index.py": {
       "maxDuration": 60,
-      "runtime": "vercel-python@latest"
+      "runtime": "vercel-python@3.11"
     }
   }
 }
