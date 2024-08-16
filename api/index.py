@@ -248,6 +248,15 @@ def index():
         </head>
         <body>
             <h1>Phrase Embedding Visualization</h1>
+ <p>
+                When you embed phrases you are converting them into <b>vectors</b> that can be stored in a database and compared to other vectors.
+            </p>
+            <p>
+                A comparison between vectors results in the distance between them, with smaller distances representing more closely related items.
+            </p>
+            <p>
+                You can use the text box below to input some phrases and then visualize the vector distances between them.
+            </p>
             <form method="post">
                 <label for="phrases">Phrases (comma-separated):</label>
                 <input type="text" id="phrases" name="phrases" value="{{ phrases_input }}" required>
