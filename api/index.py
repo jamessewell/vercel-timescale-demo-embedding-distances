@@ -264,7 +264,3 @@ def index():
     except Exception as e:
         logging.error(f"An error occurred: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
-# Vercel serverless function handler
-def handler(event, context):
-    return app(event, context)
