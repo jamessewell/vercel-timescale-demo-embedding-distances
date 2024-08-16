@@ -1,3 +1,4 @@
+# vercel-disable-edge
 import os
 import logging
 from flask import Flask, request, render_template_string, jsonify
