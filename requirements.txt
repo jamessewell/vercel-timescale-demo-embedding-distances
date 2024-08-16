@@ -5,4 +5,4 @@ numpy
 networkx
 python-dotenv
 plotly
-werkzeug==2.2.2
+werkzeug
