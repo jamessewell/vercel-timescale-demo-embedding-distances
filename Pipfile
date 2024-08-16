@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "==3.0.3"
+psycopg2-binary = "~=2.9.6"
+pgvector = "*"
+numpy = "*"
+networkx = "*"
+python-dotenv = "*"
+plotly = "*"
+werkzeug = "==2.2.2"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
